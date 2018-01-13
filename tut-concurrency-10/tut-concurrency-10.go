@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/frank-carnovale/stringutil"
+	"github.com/frank-carnovale/go/stringutil"
 	"sync"
 )
 
