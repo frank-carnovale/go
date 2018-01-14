@@ -45,7 +45,9 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 }
 
 func main() {
+
 	threads = 1
+
 	go Crawl("http://golang.org/", 4, fetcher)
 	for threads > 0 {
 		url := <-channel
@@ -56,8 +58,12 @@ func main() {
 	for k, v := range urlmap {
 		fmt.Printf("url %s found %d times\n", k, v)
 	}
-	str := stringutil.Reverse("they think it's all over ☃")
-	fmt.Printf("reversed: [%s]\n", str)
+
+	str1 := stringutil.Reverse("\xe2\x98\x8e they think it's all over ☃")
+	str2 := stringutil.Reverse("☎ they think it's all over ☃")
+	fmt.Printf("reversed: [%s]\n", str1)
+	fmt.Printf("reversed: [%s]\n", str2)
+
 }
 
 // fakeFetcher is a Fetcher that returns canned results.
